@@ -5,7 +5,6 @@ var uuid=require('uuid');
 var cookieParser=require('cookie-parser');
 var clone=require('clone');
 
-
 var app=express();
 
 /*
@@ -23,6 +22,7 @@ app.use(session({//使用session函数作为中间件，设置相应的选项值
 
 }))
 */
+
 function my_session(){//自定义中间件
     var data={};
     console.log("in my session");//此句会在程序开始运行时执行，也就是说没有请求发来 就执行了
@@ -44,6 +44,7 @@ function my_session(){//自定义中间件
 	console.log("this is in my_session return");
     }
 }
+
 app.use(cookieParser('asdasqweqwe'));
 app.use(my_session());
 app.use(function(req,res,next){
@@ -103,4 +104,4 @@ app.get('/',function(req,res,next){//当根目录检测到请求时，将对应�
     res.send('hi');
 })
 
-app.listen(3000);
+app.listen(2231);
